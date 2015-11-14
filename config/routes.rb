@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
-  resources :events
+
+  resources :events do
+
+    collection do
+      get "top" => "events#top"
+    end
+
+    member do
+      get "location" => "events#location"
+    end
+
+  end
+
+
+
   root "events#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
