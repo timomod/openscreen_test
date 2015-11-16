@@ -10,11 +10,13 @@ Rails.application.routes.draw do
       get "location" => "events#location"
     end
 
+    resources :reviews, only: [:new, :create]
+
   end
 
 
-
   root "events#index"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
